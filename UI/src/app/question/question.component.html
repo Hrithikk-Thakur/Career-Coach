@@ -1,1 +1,23 @@
-<p>question works!</p>
+<div class="question-page">
+  <h1>Questions</h1>
+  <div class="questions-container">
+    <div class="question-item" *ngFor="let question of questions; let i = index">
+      <div class="question">
+        <p>{{ i + 1 }}. {{ question.text }}</p>
+      </div>
+      <div class="options">
+        <label *ngFor="let option of answerOptions">
+          <input
+            type="radio"
+            [name]="'question' + i"
+            [value]="option.name"
+            (change)="updateAnswer(i, option.name)"
+            [checked]="selectedAnswers[i] === option.name"
+          />
+          <span>{{ option.name }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <button class="submit-btn" [disabled]="!isSubmitEnabled()" (click)="onSubmit()">Submit</button>
+</div>
