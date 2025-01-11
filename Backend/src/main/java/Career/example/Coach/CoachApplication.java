@@ -1,13 +1,13 @@
-package Vidhyan.Backend;
+package Career.example.Coach;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackendApplication {
+public class CoachApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackendApplication.class, args);
+		SpringApplication.run(CoachApplication.class, args);
 	}
 
 }
